@@ -17,7 +17,7 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake() -> words(rand(1,3)),
+            'name' => fake() -> words(rand(1, 2), true),
             'code' => fake() -> regexify('[a-z0-9]{5}'),
         ];
     }

@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             TagSeeder::class,
             MovieSeeder::class,
-        ])
+        ]);
         // \App\Models\User::factory(10)->create();
     }
 }

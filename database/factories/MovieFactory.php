@@ -18,7 +18,7 @@ class MovieFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake() -> title(null),
+            'title' => fake() -> words(rand(1, 6), true),
             'original_title' => fake() -> title(null),
             'code' => fake() -> regexify('[A-Z0-9]{5}'),
             'plot' => fake()->boolean() ? fake()->text() : null,

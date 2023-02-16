@@ -2,10 +2,11 @@
 
 
 @section('content')
+    <h2>Movies</h2>
     <ul>
         @foreach ($movies as $movie)
             <li>
-                {{$movie->code}}
+                {{$movie->title}}
             </li>
         @endforeach
     </ul>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -9,8 +10,15 @@ class MainController extends Controller
 {
     // HOME
     public function home() {
+        $genres = Genre::all();
+        return view('pages.home', compact('genres'));
+    }
+
+    // MOVIE
+    // Home
+    public function movieHome() {
         $movies = Movie::all();
-        return view('pages.home', compact('movies'));
+        return view('pages.movie.home', compact('movies'));
     }
 
     // SHOW

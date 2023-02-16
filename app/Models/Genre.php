@@ -14,8 +14,8 @@ class Genre extends Model
         'code',
     ];
 
-    // many (genres) to many (movies)
+    // one (genre) to many (movies)
     public function movies() {
-        return $this -> belongsToMany(Movie :: class);
+        return $this -> hasMany(Movie :: class);
     }
 }

@@ -19,8 +19,8 @@ class Movie extends Model
     ];
 
     // many (movies) to many (genres)
-    public function genres() {
-        return $this -> belongsToMany(Genre :: class);
+    public function genre() {
+        return $this -> belongsTo(Genre :: class);
     }
     // many (movies) to many (tags)
     public function tags() {

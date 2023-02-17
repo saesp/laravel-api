@@ -62,7 +62,32 @@ class MainController extends Controller
     }
 
 
-    // EDIT
-    public function edit() {
+    // Edit - Update
+    public function movieEdit(Movie $movie) {
+        $genres = Genre::all();
+        $tags = Tag::all();
+    
+        return view('pages.movie.edit', compact('movie', 'genres', 'tags'));
     }
-}
+    public function movieUpdate(Request $request)
+    {
+        $data = $request->all();
+    
+    
+        $movie = Movie::make($data);
+    
+        // genre
+        $genre = Genre::find($data['genre_id']);
+        $movie -> update($data);
+        $movie-> genre()-> associate($genre);
+    
+        $movie-> save();
+    
+        // tags
+        $tags = Tag::find($data['tags_id']);
+        $movie-> tags()-> sync($tags);
+    
+    
+        return redirect()-> route('home');
+    }
+    }

@@ -26,3 +26,7 @@ Route::get('/home/movies/', [MainController::class, 'movieHome'])->name('movie.h
 // create - store
 Route::get('/create/movie/', [MainController::class, 'movieCreate'])->name('movie.create');
 Route::post('/store/movie/', [MainController::class, 'movieStore'])->name('movie.store');
+
+// edit - update
+Route::get('/edit/movie/{movie}', [MainController::class, 'movieEdit'])->name('movie.edit');
+Route::post('/update/movie/', [MainController::class, 'movieUpdate'])->name('movie.update');

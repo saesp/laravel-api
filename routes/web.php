@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// HOME
 Route::get('/', [MainController::class, 'home'])->name('home');
 
+
+// MOVIE
+
+// home
 Route::get('/home/movies/', [MainController::class, 'movieHome'])->name('movie.home');
+
+// create - store
+Route::get('/create/movie/', [MainController::class, 'movieCreate'])->name('movie.create');
+Route::post('/store/movie/', [MainController::class, 'movieStore'])->name('movie.store');

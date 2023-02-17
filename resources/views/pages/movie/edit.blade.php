@@ -12,9 +12,6 @@
         <label for="originalTitle">original_title</label>
         <input type="text" name="original_title" value="{{$movie->original_title}}">
         
-        <label for="code">code</label>
-        <input type="text" name="code" value="{{$movie->code}}">
-        
         <label for="plot">plot</label>
         <input type="text" name="plot" value="{{$movie->plot}}">
         

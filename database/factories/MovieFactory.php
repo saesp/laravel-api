@@ -19,8 +19,7 @@ class MovieFactory extends Factory
     {
         return [
             'title' => fake() -> words(rand(1, 6), true),
-            'original_title' => fake() -> title(null),
-            'code' => fake() -> regexify('[A-Z0-9]{5}'),
+            'original_title' => fake() -> words(rand(4, 6), true),
             'plot' => fake()->boolean() ? fake()->text() : null,
             'vote' => fake()->boolean() ? fake()->randomFloat(1, 0, 5) : null,
             'release_date' => fake() -> dateTimeBetween("-100 years", 'now', null),

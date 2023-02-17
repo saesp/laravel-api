@@ -18,7 +18,6 @@ return new class extends Migration
 
             $table -> string('title', 64);
             $table -> string('original_title', 64);
-            $table -> string('code', 5) -> unique();
             $table -> text('plot') -> nullable();
             $table -> float('vote') -> unsigned() -> default(0) -> nullable();
             $table -> date('release_date');

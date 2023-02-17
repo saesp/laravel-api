@@ -14,10 +14,6 @@
         <input type="text" name="original_title">
         
         <br>
-        <label for="code">Code</label>
-        <input type="text" name="code">
-        
-        <br>
         <label for="plot">Plot</label>
         <input type="text" name="plot">
         

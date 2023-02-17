@@ -23,6 +23,9 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 // home
 Route::get('/home/movies/', [MainController::class, 'movieHome'])->name('movie.home');
 
+// delete
+Route::get('/delete/movie/{movie}', [MainController::class, 'movieDelete'])->name('movie.delete');
+
 // create - store
 Route::get('/create/movie/', [MainController::class, 'movieCreate'])->name('movie.create');
 Route::post('/store/movie/', [MainController::class, 'movieStore'])->name('movie.store');

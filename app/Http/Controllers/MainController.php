@@ -42,7 +42,7 @@ class MainController extends Controller
     }
     public function movieStore(Request $request)
     {
-        $data = $request;
+        $data = $request->all();
 
 
         $movie = Movie::make($data);

@@ -10,7 +10,7 @@
         <input type="text" name="title">
         
         <br>
-        <label for="original_title">Original title</label>
+        <label for="originalTitle">Original title</label>
         <input type="text" name="original_title">
         
         <br>
@@ -26,27 +26,30 @@
         <input type="number" name="vote">
 
         <br>
-        <label for="release_date">Release date</label>
+        <label for="releaseDate">Release date</label>
         <input type="date" name="release_date">
 
         <br>
-        <label for="genre_id">Genre</label>
-        <select name="genre_id">
+        <label for="genreId">Genre</label>
+        <select name="genre_id" id="">
             @foreach ($genres as $genre)
-                <option value="{{ $genre -> id }}">
-                    {{ $genre -> name }}
+                <option value="{{$genre->id}}">
+                    {{$genre->name}}
                 </option>
             @endforeach
         </select>
+        
 
         <br>
-        <label>Tag</label>
+        <label for="">Tag</label>
         <br>
         @foreach ($tags as $tag)
-            <input type="checkbox" name="tags_id[]" value="{{ $tag -> id }}" id="{{ $tag -> id }}">
-            <label for="{{ $tag -> id }}">{{ $tag -> name }}</label>
+            <input type="checkbox" name="tags_id[]" value="{{$tag->id}}" id="{{$tag->id}}">
+            <label for="{{$tag->id}}">{{$tag->name}}</label> 
             <br>
         @endforeach
+        
+        
 
         <br>
         <button type="submit">CREATE</button>

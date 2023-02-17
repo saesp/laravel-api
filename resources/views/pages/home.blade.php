@@ -3,19 +3,22 @@
 
 @section('content')
 
-    <h2>Home</h2>
+    <h1 class="m-4">Home</h1> 
+    <a href="{{route('movie.home')}}">Movies List</a> 
     
     {{-- genres --}}
     <ul>
+        <h2>Genres</h2>
         @foreach ($genres as $genre)
-        <li>
-            <h3>Genre: {{$genre->name }}</h3>
+        <li class="list-unstyled">
+            <h3>{{ ucfirst($genre->name) }}</h3>
 
             {{-- movies --}}
             <ul>
+                <h3>Movies</h3>
                 @foreach ($genre->movies as $movie)
                     <li>
-                        <h4>Movie: {{ $movie->title }}</h4>
+                        <h4>{{ ucfirst($movie->title) }}</h4>
 
                         {{-- tags --}}
                         <ul> 

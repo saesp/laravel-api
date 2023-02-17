@@ -6,19 +6,19 @@
     <form action="{{ route('movie.update') }}" method="POST">
         @csrf
 
-        <label for="title">title</label>
+        <label for="title">Title</label>
         <input type="text" name="title" value="{{$movie->title}}">
         
-        <label for="originalTitle">original_title</label>
+        <label for="originalTitle">Original title</label>
         <input type="text" name="original_title" value="{{$movie->original_title}}">
         
-        <label for="plot">plot</label>
+        <label for="plot">Plot</label>
         <input type="text" name="plot" value="{{$movie->plot}}">
         
-        <label for="vote">vote</label>
+        <label for="vote">Vote</label>
         <input type="text" name="vote" value="{{$movie->vote}}">
 
-        <label for="releaseDate">release_date</label>
+        <label for="releaseDate">ReleaseCdate</label>
         <input type="text" name="release_date" value="{{$movie->release_date}}">
 
         <br>
@@ -26,7 +26,7 @@
         <select name="genre_id" id="">
             @foreach ($genres as $genre)
                 <option value="{{$genre->id}}" @selected($movie->genre->id == $genre->id)>
-                    {{$genre->name}}
+                    {{ucfirst($genre->name)}}
                 </option>
             @endforeach
         </select>

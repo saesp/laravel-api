@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // HOME
 Route::get('/', [MainController::class, 'home'])->name('home');
 
-
 // MOVIE
-
 // home
 Route::get('/home/movies/', [MainController::class, 'movieHome'])->name('movie.home');
 
@@ -33,3 +33,8 @@ Route::post('/store/movie/', [MainController::class, 'movieStore'])->name('movie
 // edit - update
 Route::get('/edit/movie/{movie}', [MainController::class, 'movieEdit'])->name('movie.edit');
 Route::post('/update/movie/', [MainController::class, 'movieUpdate'])->name('movie.update');
+
+
+// API
+Route::get('/api/v1/movie/all', [ApiController::class, 'movieAll']);
+

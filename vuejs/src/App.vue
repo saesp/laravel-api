@@ -16,19 +16,22 @@ export default {
   //   AppFooter
   // },
 
-  // data() {
-  //   return {
-  //   }
-  // },
+  data() {
+    return {
+      movies: [],
+    }
+  },
 
   mounted() {
     axios.get(apiUrl)
       .then(res => {
         const data = res.data;
         const success = data.success;
-        const movies = data.response;
+        const movies_data = data.response;
 
-        console.log(movies);
+        this.movies = movies_data;
+
+        console.log(movies_data);
       })
       .catch(err => console.error(err));
   }
@@ -38,7 +41,7 @@ export default {
 <template>
   <main class="container">
     <ul> fff
-      <!-- <li v-for="(movie, index) in movies">{{ movie.title }} kkk</li> -->
+      <li v-for="(movie) in movies">{{ movie.title }} --- vote: {{ movie.vote }}</li>
     </ul>
   </main>
 </template>

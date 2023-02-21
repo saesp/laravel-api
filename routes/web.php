@@ -4,22 +4,11 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-// HOME
+// -------------- WEB
+// Home/Index
 Route::get('/', [MainController::class, 'home'])->name('home');
 
-// MOVIE
+// Movie
 // home
 Route::get('/home/movies/', [MainController::class, 'movieHome'])->name('movie.home');
 
@@ -35,6 +24,6 @@ Route::get('/edit/movie/{movie}', [MainController::class, 'movieEdit'])->name('m
 Route::post('/update/movie/', [MainController::class, 'movieUpdate'])->name('movie.update');
 
 
-// API
+// -------------- API
 Route::get('/api/v1/movie/all', [ApiController::class, 'movieAll']);
 

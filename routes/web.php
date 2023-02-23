@@ -25,5 +25,6 @@ Route::post('/update/movie/', [MainController::class, 'movieUpdate'])->name('mov
 
 
 // -------------- API
-Route::get('/api/v1/movie/all', [ApiController::class, 'movieAll']);
+Route::get('/api/v1/movies/all', [ApiController::class, 'moviesAll']);
+
 

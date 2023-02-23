@@ -6,7 +6,7 @@
 // importare axios
 import axios from 'axios';
 
-const apiUrl = "http://127.0.0.1:8000/api/v1/movie/all";
+const apiUrl = "http://127.0.0.1:8000/api/v1/movies/all";
 
 export default {
   // name: "App",
@@ -19,17 +19,40 @@ export default {
   data() {
     return {
       movies: [],
+      genres: [],
+      tags: [],
     }
   },
 
   mounted() {
+    // axios.get(apiUrl)
+    //   .then(res => {
+    //     const data = res.data;
+    //     const success = data.success;
+    //     const movies_data = data.response;
+
+    //     if (success) {
+    //       this.movies = movies_data;
+    //     }
+
+    //     console.log(movies_data);
+    //   })
+    //   .catch(err => console.error(err));
+
     axios.get(apiUrl)
       .then(res => {
         const data = res.data;
         const success = data.success;
-        const movies_data = data.response;
+        // const response = data.response;
+        const moviesData = data.response.movies;
+        const genresData = data.response.genres;
+        const tagsData = data.response.tags;
 
-        this.movies = movies_data;
+        if (success) {
+          this.movies = moviesData;
+          this.genres = genresData;
+          this.tags = tagsData;
+        }
 
         console.log(movies_data);
       })
@@ -40,7 +63,10 @@ export default {
 
 <template>
   <main class="container">
-    <ul> fff
+    <ul>
+      <li v-for="(genre) in genres">Genre: {{ genre.name }}</li>
+    </ul>
+    <ul>
       <li v-for="(movie) in movies">{{ movie.title }} --- vote: {{ movie.vote }}</li>
     </ul>
   </main>
